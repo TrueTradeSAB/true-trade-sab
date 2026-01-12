@@ -143,6 +143,7 @@
       <button class="menu-btn" data-index="2">¿Cómo entrar a nuestra comunidad?</button>
       <button class="menu-btn" data-index="3">¿Qué hacemos en True Trade SAB?</button>
       <button class="menu-btn" data-index="4">Nuestras redes oficiales</button>
+      <button class="menu-btn" data-index="5">📜 Reglas oficiales</button>
     </aside>
 
     <main class="content">
@@ -191,7 +192,7 @@
           <br><br>
           Recomendamos leer cuidadosamente las reglas para mantener un ambiente ordenado y confiable para todos.
         </p>
-        <a class="big-btn" href="https://discord.gg/PwDmvB4f" target="_blank" rel="noopener noreferrer">🚀 Entrar al Discord Oficial</a>
+        <a class="big-btn discord-btn" href="https://discord.gg/PwDmvB4f" target="_blank" rel="noopener noreferrer">🚀 Entrar al Discord Oficial</a>
       </section>
 
       <section class="section">
@@ -221,8 +222,53 @@
           En nuestro TikTok compartimos actualizaciones, avisos relevantes y contenido relacionado
           con la comunidad.
         </p>
-        <a class="big-btn social-btn" href="https://www.tiktok.com/@fallooutt15" target="_blank" rel="noopener noreferrer">🎵 TikTok Oficial</a>
+        <a class="big-btn social-btn tiktok-btn" href="https://www.tiktok.com/@fallooutt15" target="_blank" rel="noopener noreferrer">🎵 TikTok Oficial</a>
       </section>
+
+      <section class="section">
+        <h1>📜 Reglas Oficiales – True Trade SAB 👾👻</h1>
+        <p>
+          Estas reglas aplican para <strong>toda la comunidad</strong>, sin excepciones. Al entrar al servidor aceptas cumplirlas.
+          <br><br>
+          <strong>🤝 1️⃣ Respeto</strong><br>
+          🚫 Prohibida la toxicidad, insultos, burlas o faltas de respeto.<br>
+          💬 Preguntas personales solo por DM.<br>
+          ⚖️ Los conflictos se evalúan escuchando a ambas partes y llegando a un acuerdo respetuoso.
+          <br><br>
+          <strong>🔁 2️⃣ Trades</strong><br>
+          🔒 Todos los trades, compras y ventas deben realizarse con middleman.<br>
+          ❌ No se permiten trades directos ni excepciones.
+          <br><br>
+          <strong>🛡️ 3️⃣ Middleman</strong><br>
+          ⚠️ Un middleman no puede verificar su propio trade.<br>
+          ✅ Otro middleman autorizado debe hacerse cargo.
+          <br><br>
+          <strong>👑 4️⃣ Roles</strong><br>
+          🚫 Staff o miembros con poder no pueden agregar, quitar o cambiar roles sin permiso del dueño.<br>
+          📌 Aplica para todos, sin favoritismos.
+          <br><br>
+          <strong>🏷️ 5️⃣ Apodos</strong><br>
+          ❌ Nadie con poder puede cambiar apodos.<br>
+          🧠 Medida para evitar ofensas y conflictos.
+          <br><br>
+          <strong>⚠️ 6️⃣ Advertencias</strong><br>
+          🟡 1 falta = Advertencia.<br>
+          🟠 2 faltas = Segunda advertencia.<br>
+          🔴 3 advertencias = Ban permanente.
+          <br><br>
+          <strong>🚨 7️⃣ Estafas</strong><br>
+          ⛔ Estafar en trades o dinero real implica expulsión inmediata.<br>
+          📂 Se publicarán pruebas y el usuario será añadido a la blacklist del servidor.
+          <br><br>
+          <strong>🧩 Extras</strong><br>
+          🚫 El abuso de poder será sancionado, incluso si proviene del staff.<br>
+          🗂️ Usa cada canal correctamente (sin spam ni flood).<br>
+          🕵️‍♂️ Multicuentas para evadir sanciones resultarán en ban inmediato.
+          <br><br>
+          📌 Estas reglas existen para mantener un servidor legal, transparente y piola. Ante cualquier duda, contacta al staff.
+        </p>
+      </section>
+
     </main>
   </div>
 
@@ -254,9 +300,24 @@
         if (e.deltaY < 0) showSection(current - 1);
         setTimeout(() => scrolling = false, 700);
       }, { passive: true });
+
+      // Links externos funcionando correctamente
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          const url = link.getAttribute('href');
+          if (url && url.startsWith('http')) {
+            window.open(url, '_blank', 'noopener');
+          }
+        });
+      });
+
+      // Test básico
+      console.assert(typeof showSection === 'function', 'showSection debe existir');
+      console.assert(sections.length === buttons.length, 'Debe haber misma cantidad de secciones y botones');
     });
   </script>
 </body>
 </html>
+
 
 
